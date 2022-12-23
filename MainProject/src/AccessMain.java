@@ -1,6 +1,10 @@
 import com.google.gson.Gson;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 // NOTE: Most of you won't read the license, so at the very least read that:
 // GRANTS: Commercial Use, Modification, Distribution, Patent and Private use
@@ -32,7 +36,7 @@ public class AccessMain
                 // Asks for confirmation, if yes, the while loops gets completly broken, if NO, it will ask again to re input the string.
                 case "YES":
                 {
-                    System.out.println("Confirmed.");
+                    System.out.println("Confirmed. Wait 5 seconds for your API Key to load (In case it's located in a 2nd binary file, like mine.)");
                     TimeUnit.SECONDS.sleep(5);
                     System.out.println("Working on API: "+API_KEY);
                     return;
@@ -51,6 +55,11 @@ public class AccessMain
     static String CaptureWeather(String ParamCity, String ParamApiKey)
     {
         String UniformResourceLocator = "http://dataservice.accuweather.com/currentconditions/v1/"+ParamCity+"?apikey="+ParamApiKey;
+        String ApiResponse = GetRequest(UniformResourceLocator);
+        return null;
+    }
+    static String GetRequest(String ParamURL)
+    {
         return null;
     }
 }

@@ -5,6 +5,7 @@
 * Any dependency required to run the code is pre installed, so if you are using IntelliJ IDEA, you should be good to go, without even needing to install any other sub-module.
 * Any dependency is installed inside the `OpenSourceWeather_Project\MainProject\REQUIREMENTSFORPROJECT\` directory.
 * You'll need to install Java (JDK) 19.0.1 yourself, either by your [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) or by [Oracle's website](https://www.oracle.com/java/technologies/downloads/#java19)
+* The code you will find **IS STILL INCOMPLETE**, when completed, a Release will pop out in the `Releases` tab.
 
 ---
 
