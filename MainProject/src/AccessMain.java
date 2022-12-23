@@ -1,6 +1,18 @@
 import com.google.gson.Gson;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+
+// NOTE: Most of you won't read the license, so at the very least read that:
+// GRANTS: Commercial Use, Modification, Distribution, Patent and Private use
+// LIMITATIONS: As specified per license, I do not take any liability on any possible damage for your computer, nor I take responsibility over any warranty request.
+/*
+CONDITIONS:
+- You MUST include in your project my License and Copyright notice.
+- You MUST state your changes applied to the licensed project towards the public.
+- You MUST credit the GitHub page where you found this code.
+- You MUST apply the same license (GNU General Public License GPL v3.0) to your work.
+ */
+
 public class AccessMain
 {
     static Scanner scanner = new Scanner(System.in);
