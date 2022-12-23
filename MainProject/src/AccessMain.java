@@ -48,4 +48,14 @@ public class AccessMain
             }
         }
     }
+    static String CaptureWeather(String ParamCity, String ParamApiKey)
+    {
+        String UniformResourceLocator = "http://dataservice.accuweather.com/currentconditions/v1/"+ParamCity+"?apikey="+ParamApiKey;
+        return null;
+    }
+}
+class WeatherDataClass
+{
+    String TemperatureUnit;
+    String WeatherString;
 }
