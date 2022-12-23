@@ -60,7 +60,33 @@ public class AccessMain
     }
     static String GetRequest(String ParamURL)
     {
-        return null;
+        try {
+            URL UrlLib = new URL(ParamURL);
+            HttpURLConnection conn = (HttpURLConnection) UrlLib.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Accept-Language", "en-US");
+            int ApiResponseCode = conn.getResponseCode();
+            if (ApiResponseCode == 200)
+            {
+                BufferedReader JReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder ApiCResponse = new StringBuilder();
+                String line;
+                while ((line = JReader.readLine()) != null)
+                {
+                    ApiCResponse.append(line);
+                }
+                JReader.close();
+                return ApiCResponse.toString();
+            }
+            else
+            {
+                return "Error: received response code " + ApiResponseCode;
+            }
+        }
+        catch (Exception GeneralError)
+        {
+            return "Error: " + GeneralError.getMessage();
+        }
     }
 }
 class WeatherDataClass
