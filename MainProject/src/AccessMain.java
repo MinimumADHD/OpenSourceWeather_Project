@@ -1,4 +1,7 @@
 import com.google.gson.Gson;
+import jdk.jfr.Frequency;
+
+import java.sql.Time;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.io.BufferedReader;
@@ -38,7 +41,9 @@ public class AccessMain
                 {
                     System.out.println("Confirmed. Wait 5 seconds for your API Key to load (In case it's located in a 2nd binary file, like mine.)");
                     TimeUnit.SECONDS.sleep(5);
-                    System.out.println("Working on API: "+API_KEY);
+                    System.out.println("Working on API: "+API_KEY+" wait 10 seconds to make sure the site responds appropriately.");
+                    TimeUnit.SECONDS.sleep(10);
+                    System.out.println(CaptureWeather(InsertedLocation, API_KEY));
                     return;
                 }
                 case "NO":
@@ -56,11 +61,14 @@ public class AccessMain
     {
         String UniformResourceLocator = "http://dataservice.accuweather.com/currentconditions/v1/"+ParamCity+"?apikey="+ParamApiKey;
         String ApiResponse = GetRequest(UniformResourceLocator);
-        return null;
+        Gson GsonModule = new Gson();
+        WeatherDataClass InfoData = GsonModule.fromJson(ApiResponse, WeatherDataClass.class);
+        return InfoData.toString();
     }
     static String GetRequest(String ParamURL)
     {
-        try {
+        try
+        {
             URL UrlLib = new URL(ParamURL);
             HttpURLConnection conn = (HttpURLConnection) UrlLib.openConnection();
             conn.setRequestMethod("GET");
