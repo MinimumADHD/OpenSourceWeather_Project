@@ -12,5 +12,5 @@
 ### In this project you can find:
 
 * Comments to help you understand (the presence of comments variates depending on my ADHD hitting or not.)
-* Basic and understandable Java code for 3rd graders with a very basic functional brain.
+* Basic and understandable Java code for 3rd graders with a very basic functional brain. (ok maybe not anymore)
 * The uhh i forgor 💀
