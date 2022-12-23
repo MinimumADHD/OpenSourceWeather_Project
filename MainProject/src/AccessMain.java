@@ -62,7 +62,7 @@ public class AccessMain
         String UniformResourceLocator = "http://dataservice.accuweather.com/currentconditions/v1/"+ParamCity+"?apikey="+ParamApiKey;
         String ApiResponse = GetRequest(UniformResourceLocator);
         Gson GsonModule = new Gson();
-        WeatherDataClass InfoData = GsonModule.fromJson(ApiResponse, WeatherDataClass.class);
+        WeatherDataClass InfoData = GsonModule.fromJson(GsonModule.toJson(ApiResponse), WeatherDataClass.class);
         return InfoData.toString();
     }
     static String GetRequest(String ParamURL)
